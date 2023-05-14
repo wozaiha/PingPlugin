@@ -79,10 +79,10 @@ namespace PingPlugin
 
             if (ConfigVisible) DrawConfigUi();
 
-            if (this.uiFont.IsLoaded()) ImGui.PushFont(this.uiFont);
+            //if (this.uiFont.IsLoaded()) ImGui.PushFont(this.uiFont);
             if (this.config.GraphIsVisible) DrawGraph();
             if (!serverBarShown && this.config.MonitorIsVisible) DrawMonitor();
-            if (this.uiFont.IsLoaded()) ImGui.PopFont();
+            //if (this.uiFont.IsLoaded()) ImGui.PopFont();
         }
 
         private void InitializeDtrBar(DtrBar dtrBar)
@@ -267,7 +267,7 @@ namespace PingPlugin
             }
 
             var currentItem = (int)this.config.RuntimeLang;
-            var supportedLanguages = new[] { "English", "日本語", "Español", "Deutsch", "Français", /*"中文"*/ };
+            var supportedLanguages = new[] { "English", "日本語", "Español", "Deutsch", "Français", "中文" };
             if (ImGui.Combo(Loc.Localize("Language", string.Empty), ref currentItem, supportedLanguages,
                     supportedLanguages.Length))
             {
